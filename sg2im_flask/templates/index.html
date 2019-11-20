@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>COMP 7404 Group P</title>
+</head>
+<body>
+    <div>
+        <table id="table">
+            <tr>
+                <th>Object 1</th>
+                <th>Relationship</th>
+                <th>Object 2</th>
+            </tr>
+            <tr id="rows">
+                <td>
+                    <input type="text" />
+                </td>
+                <td>
+                    <select>
+                        <option value="on">on</option>
+                        <option value="in">in</option>
+                        <option value="by">by</option>
+                        <option value="below">below</option>
+                        <option value="above">above</option>
+                        <option value="next to">next to</option>
+                        <option value="in front of">in front of</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="text" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <input type="button" name="add" value="Add Row" id="addrows" />
+    <input type="button" name="submit" value="Submit" id="submit" />
+
+    <script src="{{ url_for('static', filename='css/bootstrap.css') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/addRows.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/submit.js') }}"></script>
+
+</body>
+</html>
