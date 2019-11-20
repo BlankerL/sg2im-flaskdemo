@@ -1,5 +1,6 @@
-outputs
+venv
 __pycache__
 *.pyc
+
+outputs
 sg2im-models
-venv
