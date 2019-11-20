@@ -20,7 +20,6 @@ import torch.nn.functional as F
 
 from .layers import get_normalization_2d
 from .layers import get_activation
-from .utils import timeit, lineno, get_gpu_memory
 
 
 """

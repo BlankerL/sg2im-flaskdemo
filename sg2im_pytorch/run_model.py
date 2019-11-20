@@ -19,9 +19,9 @@ import argparse, json, os
 from imageio import imwrite
 import torch
 
-from ..sg2im.model import Sg2ImModel
-from ..sg2im.data.utils import imagenet_deprocess_batch
-from ..sg2im.vis import draw_scene_graph
+from .sg2im.model import Sg2ImModel
+from .sg2im.data.utils import imagenet_deprocess_batch
+from .sg2im.vis import draw_scene_graph
 
 
 parser = argparse.ArgumentParser()

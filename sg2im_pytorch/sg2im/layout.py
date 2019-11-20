@@ -15,9 +15,7 @@
 # limitations under the License.
 
 import torch
-import torch.nn as nn
 import torch.nn.functional as F
-from .utils import timeit, get_gpu_memory, lineno
 
 
 """

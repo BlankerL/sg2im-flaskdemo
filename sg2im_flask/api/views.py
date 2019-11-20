@@ -1,7 +1,7 @@
 from . import api
 from flask import request, send_file, abort, jsonify
 from ..extensions import argumentBuilder
-from sg2im_pytorch.scripts.run_model import main
+from sg2im_pytorch.run_model import main
 
 
 @api.route('/')
