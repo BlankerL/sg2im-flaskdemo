@@ -5,7 +5,7 @@
     <title>COMP 7404 Group P</title>
 </head>
 <body>
-    <div>
+    <form id="form">
         <table id="table">
             <tr>
                 <th>Object 1</th>
@@ -14,10 +14,10 @@
             </tr>
             <tr id="rows">
                 <td>
-                    <input type="text" />
+                    <input type="text" name="Object 1"/>
                 </td>
                 <td>
-                    <select>
+                    <select name="Relationship">
                         <option value="on">on</option>
                         <option value="in">in</option>
                         <option value="by">by</option>
@@ -28,16 +28,27 @@
                     </select>
                 </td>
                 <td>
-                    <input type="text" />
+                    <input type="text" name="Object 2"/>
                 </td>
             </tr>
         </table>
-    </div>
-    <input type="button" name="add" value="Add Row" id="addrows" />
-    <input type="button" name="submit" value="Submit" id="submit" />
+    </form>
 
-    <script src="{{ url_for('static', filename='css/bootstrap.css') }}"></script>
+    <button type="button" onclick="addRow()">Add Row</button>
+    <button onclick="submitForm()">Submit</button>
+
+    <div id="result">
+    </div>
+
+    <div id="description">
+        <p>
+            Temporarily Left Blank.
+        </p>
+    </div>
+
     <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='css/bootstrap.css') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.form.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/addRows.js') }}"></script>
     <script src="{{ url_for('static', filename='js/submit.js') }}"></script>
 

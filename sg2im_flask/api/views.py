@@ -4,11 +4,6 @@ from ..extensions import argumentBuilder
 from sg2im_pytorch.run_model import main
 
 
-@api.route('/')
-def index():
-    return "Hello, World!"
-
-
 @api.route('/generate', methods=['POST'])
 def generate():
     if request.method == 'POST':
@@ -25,7 +20,7 @@ def generate():
     return jsonify(success=True), 201
 
 
-@api.route('/get_image', methods=['GET'])
+@api.route('/parser', methods=['POST'])
 def get_image():
-
-    return "Hello"
+    print(request.form)
+    return 'Hello!'
