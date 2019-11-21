@@ -1,19 +1,21 @@
 from . import api
-from flask import request, abort
+from .functions import generate
+from flask import request, abort, send_file, jsonify
 from ..extensions import argumentBuilder
 from sg2im_pytorch.run_model import main
-import os
 
 
-def generate(scene_graph):
+@api.route('/json', methods=['GET', 'POST'])
+def from_json():
+    scene_graph = request.json
     args = argumentBuilder()
     args.scene_graphs_json = scene_graph
     model_build = main(args)
+    print(args)
     if model_build:
-        response = '<img src="' + '/static/outputs/' + os.path.split(model_build)[1] + '" >'
-        return response
+        return send_file(model_build, mimetype='image/gif')
     else:
-        return abort(404)
+        abort(404)
 
 
 @api.route('/parser', methods=['POST'])
