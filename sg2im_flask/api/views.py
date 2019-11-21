@@ -1,23 +1,19 @@
 from . import api
-from flask import request, send_file, abort, jsonify
+from flask import request, abort
 from ..extensions import argumentBuilder
 from sg2im_pytorch.run_model import main
+import os
 
 
-@api.route('/generate', methods=['POST'])
-def generate():
-    if request.method == 'POST':
-        scene_graph = request.json
-        args = argumentBuilder()
-        args.scene_graphs_json = scene_graph
-        model_build = main(args)
-        if model_build:
-            return send_file(model_build, mimetype='image/gif')
-        else:
-            abort(404)
-    # the code below is executed if the request method
-    # was GET or the credentials were invalid
-    return jsonify(success=True), 201
+def generate(scene_graph):
+    args = argumentBuilder()
+    args.scene_graphs_json = scene_graph
+    model_build = main(args)
+    if model_build:
+        response = '<img src="' + '/static/outputs/' + os.path.split(model_build)[1] + '" >'
+        return response
+    else:
+        return abort(404)
 
 
 @api.route('/parser', methods=['POST'])
