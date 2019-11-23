@@ -1,4 +1,6 @@
 FLASK_APP=sg2im_flask
 FLASK_ENV=development
+FLASK_RUN_HOST=0.0.0.0
+FLASK_RUN_PORT=5000
 LC_ALL=en_US.utf-8
 LANG=en_US.utf-8
