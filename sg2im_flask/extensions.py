@@ -10,7 +10,6 @@ class argumentBuilder:
         os.path.split(os.path.realpath(__file__))[0], os.path.pardir,
         'sg2im_pytorch', 'sg2im-models', 'vg128.pt'
     )
-    id = str(int(random.random() * 1000000))
     scene_graphs_json = ''
     output_dir = os.path.join(
         os.path.split(os.path.realpath(__file__))[0],
