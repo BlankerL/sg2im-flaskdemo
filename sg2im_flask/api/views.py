@@ -3,6 +3,7 @@ from .functions import generate
 from flask import request, abort, send_file, jsonify
 from ..extensions import argumentBuilder
 from sg2im_pytorch.run_model import main
+import random
 
 
 @api.route('/json', methods=['GET', 'POST'])
@@ -10,8 +11,8 @@ def from_json():
     scene_graph = request.json
     args = argumentBuilder()
     args.scene_graphs_json = scene_graph
+    args.id = str(int(random.random() * 1000000))
     model_build = main(args)
-    print(args)
     if model_build:
         return send_file(model_build, mimetype='image/gif')
     else:
