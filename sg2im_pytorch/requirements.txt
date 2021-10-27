@@ -1,7 +1,7 @@
 cloudpickle == 1.2.2
 cycler == 0.10.0
 Cython == 0.29.14
-dask == 2.6.0
+dask == 2021.10.0
 decorator == 4.4.1
 h5py == 2.10.0
 imageio == 2.6.1
